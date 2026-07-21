@@ -21,6 +21,7 @@ public class ManipTexte {
         this.texte = texte;
     }
 
+    //Getter et Setter
     public String getTexte() { return texte; }
     public void setTexte(String texte) { this.texte = texte; }
 
@@ -31,7 +32,7 @@ public class ManipTexte {
         HashMap<String, Integer> freq = new HashMap<>();
         StringTokenizer tok = new StringTokenizer(texte, SEPARATEURS);
         while (tok.hasMoreTokens()) {
-            String mot = tok.nextToken().toLowerCase();
+            String mot = tok.nextToken().toLowerCase(); // mettre le mot en minuscule
             freq.put(mot, freq.getOrDefault(mot, 0) + 1);
         }
         return freq;

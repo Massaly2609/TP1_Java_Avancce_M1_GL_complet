@@ -1,7 +1,5 @@
 package sn.uasz.m1.tp1.exo4;
 
-import java.util.Objects;
-
 /**
  * TP1 - Exercice 4 : un membre du club informatique de l'UASZ.
  * L'égalité de deux membres est définie par l'égalité de leurs identifiants.
@@ -42,21 +40,20 @@ public class Membre {
 
     @Override
     public String toString() {
-        return String.format("Membre[id=%s, nom=%s, profession=%s, sexe=%s, tel=%s]",
+        return String.format("Membre [id = %s, nom = %s, profession = %s, sexe = %s, tel = %s]",
                 identifiant, nom, profession, sexe, telephone);
     }
 
     /** Deux membres sont égaux ssi ils ont le même identifiant. */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Membre)) return false;
-        Membre other = (Membre) o;
-        return Objects.equals(this.identifiant, other.identifiant);
+        if (!(o instanceof Membre other)) return false;
+//        Membre other = (Membre) o; // casting
+        return this.identifiant.equals(other.identifiant);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(identifiant);
+        return this.identifiant.hashCode();
     }
 }

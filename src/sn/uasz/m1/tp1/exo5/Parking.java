@@ -24,7 +24,7 @@ public class Parking {
 
     /** Vérifie que le numéro de place est compris entre 1 et la capacité. */
     private void verifierNumero(int place) throws PlaceInexistanteException {
-        if (place < 1 || place > capacite) {
+        if (place < 1 || place > capacite) { // place compris entre ]1, capacite[
             throw new PlaceInexistanteException(place, capacite);
         }
     }
@@ -64,6 +64,12 @@ public class Parking {
             Voiture v = voitures.get(p);
             System.out.println("Place " + p + " : " + (v == null ? "(libre)" : v));
         }
+
+        System.out.println("-------------------Parking (Place occupée)---------------------");
+        for(Map.Entry<Integer, Voiture> v : voitures.entrySet()){
+            System.out.println("Place " + v.getKey() + " : " + v.getValue());
+        }
+
     }
 
     /**

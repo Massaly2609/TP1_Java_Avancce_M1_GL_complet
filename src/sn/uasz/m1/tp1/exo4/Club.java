@@ -47,7 +47,7 @@ public class Club {
         if (!membres.containsKey(identifiant)) {
             throw new InexistantMembreException(identifiant);
         }
-        membres.remove(identifiant);
+        membres.remove(identifiant); // Suppression du membre
     }
 
     /** Affiche l'ensemble des membres du club. */
@@ -56,8 +56,12 @@ public class Club {
             System.out.println("(aucun membre)");
             return;
         }
-        for (Membre m : membres.values()) {
-            System.out.println(m);
+//        for (Membre m : membres.values()) {
+//            System.out.println(m);
+//        }
+
+        for(Map.Entry<String, Membre> e : membres.entrySet()){
+            System.out.println(e.getKey() + " => " + e.getValue());
         }
     }
 

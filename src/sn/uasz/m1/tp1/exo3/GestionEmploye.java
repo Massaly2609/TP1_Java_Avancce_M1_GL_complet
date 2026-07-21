@@ -59,8 +59,8 @@ public class GestionEmploye {
     /** Renvoie l'employé le mieux payé, ou null si la liste est vide. */
     public Employe mieuxPaye() {
         if (employes.isEmpty()) return null;
-        Employe meilleur = employes.get(0);
-        for (Employe e : employes) {
+        Employe meilleur = employes.get(0);    // Suppose que le premier est le mieux payé
+         for (Employe e : employes) {
             if (e.getSalaire() > meilleur.getSalaire()) {
                 meilleur = e;
             }

@@ -11,12 +11,14 @@ public class GestionClub {
     public static void main(String[] args) {
         Club club = new Club();
 
-        // --- 1) Ajout de trois membres ---
+        // --- 1) Ajout de trois membres  au club ---
         try {
+
             club.ajouter(new Membre("ID01", "DIOUF",  "Étudiant",   Sexe.HOMME, "77 100 00 00"));
             club.ajouter(new Membre("ID02", "DIATTA", "Enseignante", Sexe.FEMME, "77 200 00 00"));
             club.ajouter(new Membre("ID03", "FALL",   "Étudiant",   Sexe.HOMME, "77 300 00 00"));
             System.out.println("✓ 3 membres ajoutés (" + club.taille() + " au total)");
+
         } catch (IdentifiantExistantException e) {
             System.out.println("⚠ " + e.getMessage());
         }

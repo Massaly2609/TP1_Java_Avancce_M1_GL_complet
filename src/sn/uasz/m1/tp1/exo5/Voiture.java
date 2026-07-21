@@ -37,7 +37,7 @@ public class Voiture {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Voiture)) return false;
+        if (!(o instanceof Voiture )) return false;
         Voiture v = (Voiture) o;
         return Objects.equals(immatriculation, v.immatriculation)
             && Objects.equals(marque, v.marque);
